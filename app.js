@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 // Connect Db
 
 const myFunc = () => {
+  /*
   const userSchema = mongoose.Schema({
       name: String
   });
@@ -24,7 +25,7 @@ const myFunc = () => {
       if (data)
           console.log('Saved to DB = ' + data)
   }
-  );
+  ); */
 };
 
 
@@ -47,6 +48,16 @@ app.get('/', async(req,res)=>{
     photos:photos
   })
 })
+
+app.get('/photos/:id', async(req,res)=>{
+  //console.log(req.params.id)
+  //res.render('about')
+  const photo = await Photo.findById(req.params.id)
+  res.render('photo',{
+    photo
+  })
+})
+
 app.get('/about',(req,res)=>{
   res.render('about')
 })
