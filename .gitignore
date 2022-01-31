@@ -48,8 +48,7 @@ node_modules/
 jspm_packages/
 
 # public views directories
-public/
-views/
+
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
